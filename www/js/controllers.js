@@ -1,18 +1,22 @@
 angular.module('cavamenu.controllers', [])
 
 .controller('AppCtrl', function($scope) {
-  $scope.categories = ['Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes', 'Fruits & Vegetables', 'Grains & Breads', 'Eggs & Dairy', 'Junk & Snack Foods'];
+  $scope.categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes', ];
 })
 
 .controller('DishesCtrl', function($scope, $stateParams) {
-  categories = ['Meat, Fish & Shellfish', 'Nuts, Beans & Legumes', 'Fruits & Vegetables', 'Grains & Breads', 'Eggs & Dairy', 'Junk & Snack Foods'];
+  categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes', ];
 
   dishes = [
     [
-      "almonds",
-      "olives",
-      "anchovies, piquillo peppers, caperberries",
-      "pork crackling, mushroom salt",
+      "egg (medium size)",
+      "milk (full fat)",
+      "milk (low fat)",
+      "cheese (full fat)",
+	  "cheese (low fat)",
+	  "cottage cheese",
+	  "natural yoghurt",
+	  
     ],
     [
       "octopus, smoked paprika, potatoes, px vinegar",
