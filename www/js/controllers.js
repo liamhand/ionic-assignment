@@ -9,13 +9,13 @@ angular.module('cavamenu.controllers', [])
 
   dishes = [
     [
-      "Egg (Medium Size)",
-      "Milk (Full Fat)",
-      "Milk (Low Fat)",
-      "Cheese (Full Fat)",
-	  "Cheese (Low Fat)",
-	  "Cottage Cheese",
-	  "Natural Yoghurt",
+      {title: "Egg (Medium Size)", imgsrc: "img/egg.jpg", calories: 100},
+      {title: "Milk (Full Fat)", imgsrc: "img/egg.jpg", calories: 100},
+      {title: "Milk (Low Fat)", imgsrc: "img/egg.jpg", calories: 100},
+	  {title: "Cheese (Full Fat)", imgsrc: "img/egg.jpg", calories: 100},
+	  {title: "Cheese (Low Fat)", imgsrc: "img/egg.jpg", calories: 100},
+	  {title: "Cottage Cheese", imgsrc: "img/egg.jpg", calories: 100},
+	  {title: "Natural Yoghurt", imgsrc: "img/naturalyogurt.jpg", calories: 200},
     ],
     [
       "Banana",
