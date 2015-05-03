@@ -8,6 +8,9 @@ angular.module('project.controllers', [])
 
 
 
+
+
+
 .controller('DishesCtrl', function($scope, $stateParams) {
   categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes'];
 

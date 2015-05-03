@@ -1,7 +1,14 @@
 <ion-view view-title="{{ category }}">
+  
+  <div class="bar bar-subheader bar-energized">
+	<h2 class="title", id="totalCals">Total Daily Calories: 0</h2>
+  </div>
+  
   <ion-content>
     <ion-list>
-      <div class="list list-inset" ng-repeat="dish in dishes">
+	<br>
+	<br>
+	 <div class="list list-inset" ng-repeat="dish in dishes">
 		<div class="item">
      	  <img src="{{ dish.imgsrc }}" width="50" height="50">
           <h2>{{ dish.title }}</h2>
