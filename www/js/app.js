@@ -3,6 +3,13 @@ angular.module('calorieCounter', ['ionic', 'project.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   
+  .state('home', {
+    url: "/home",
+    abstract: false,
+    templateUrl: "templates/homepage.html",
+    //controller: 'AppCtrl'
+  })
+  
 
   .state('app', {
     url: "/app",
@@ -10,6 +17,9 @@ angular.module('calorieCounter', ['ionic', 'project.controllers'])
     templateUrl: "templates/categories.html",
     controller: 'AppCtrl'
   })
+  
+
+  
 
   .state('app.dishes', {
     url: "/dishes/:dishesId",
@@ -21,5 +31,5 @@ angular.module('calorieCounter', ['ionic', 'project.controllers'])
     }
   });
 
-  $urlRouterProvider.otherwise('/app/dishes/0');
+  $urlRouterProvider.otherwise('/home');
 });
