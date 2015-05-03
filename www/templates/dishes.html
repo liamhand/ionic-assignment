@@ -1,15 +1,14 @@
 <ion-view view-title="{{ category }}">
   <ion-content>
     <ion-list>
-      <div class="card" ng-repeat="dish in dishes">
-        <div class="item item-text-wrap">
-		  <img src={{ dish.imgsrc }} width="50" height="50">
+      <div class="list list-inset" ng-repeat="dish in dishes">
+		<div class="item">
+     	  <img src={{ dish.imgsrc }} width="50" height="50">
           <h2>{{ dish.title }}</h2>
-		  
 		  <h4> Quantity: {{dish.quantity}} </h4>
 		  <h4> Calories: {{dish.calories}} </h4>
-        </div>
-	  </div>
-    </ion-list>
+		</div>
+	  </div>  
+	</ion-list>
   </ion-content>
 </ion-view>
