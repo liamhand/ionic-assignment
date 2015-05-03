@@ -1,4 +1,4 @@
-angular.module('cavamenu', ['ionic', 'project.controllers'])
+angular.module('calorieCounter', ['ionic', 'project.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
