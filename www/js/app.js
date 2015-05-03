@@ -7,7 +7,7 @@ angular.module('calorieCounter', ['ionic', 'project.controllers'])
     url: "/home",
     abstract: false,
     templateUrl: "templates/homepage.html",
-    //controller: 'AppCtrl'
+   
   })
   
 
