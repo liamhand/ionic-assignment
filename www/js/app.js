@@ -1,12 +1,13 @@
-angular.module('cavamenu', ['ionic', 'cavamenu.controllers'])
+angular.module('cavamenu', ['ionic', 'project.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+  
 
   .state('app', {
     url: "/app",
     abstract: true,
-    templateUrl: "templates/menu.html",
+    templateUrl: "templates/categories.html",
     controller: 'AppCtrl'
   })
 
@@ -20,5 +21,5 @@ angular.module('cavamenu', ['ionic', 'cavamenu.controllers'])
     }
   });
 
-  $urlRouterProvider.otherwise('/app/dishes/1');
+  $urlRouterProvider.otherwise('/app/dishes/0');
 });

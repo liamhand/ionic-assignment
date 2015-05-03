@@ -1,4 +1,4 @@
-angular.module('cavamenu.controllers', [])
+angular.module('project.controllers', [])
 
 .controller('AppCtrl', function($scope) {
   $scope.categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes'];

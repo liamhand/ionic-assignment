@@ -7,6 +7,14 @@
           <h2>{{ dish.title }}</h2>
 		  <h4> Quantity: {{dish.quantity}} </h4>
 		  <h4> Calories: {{dish.calories}} </h4>
+		  <button ng-click="addCalories({{dish.calories}})"   class="button button-small button-balanced ion-plus" >
+			Click To Add 	
+		  </button>
+		  <br>
+		  <br>
+		  <button ng-click="addCalories({{dish.calories}})"   class="button button-small button-assertive ion-minus" >
+			Click To Remove	
+		  </button>
 		</div>
 	  </div>  
 	</ion-list>
