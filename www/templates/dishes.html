@@ -1,17 +1,15 @@
-
 <ion-view view-title="{{ category }}">
-
-  <div class="bar bar-subheader bar-energized" title="Total Daily Calories">
-    <h2> <div id="totalCals"> 0 </div> </h2>
-  </div>
-  
-  <ion-content>
+    <ion-content>
+    
     <ion-list>
 	
-	<br>
-	<br>
+	
 	 <div class="list list-inset" ng-repeat="dish in dishes">
 		<div class="item">
+		  
+		  
+		
+		
      	  <img src="{{ dish.imgsrc }}" width="50" height="50">
           <h2>{{ dish.title }}</h2>
 		  <h4> Quantity: {{dish.quantity}} </h4>
@@ -25,8 +23,15 @@
 			Click To Remove	
 		  </button>
 		  
-		  
-		</div>
+		  <div  style="float:right;">																		<!-- this div will stay to the right of the screen-->
+					<i class="icon ion-arrow-down-c"></i>														<!-- adds an arrow that points down-->
+					<b>Total Calories:
+					
+						<input type="number" ng-model="count" style="float: right;"/>							<!--prints out the total calories, (shouldnt be an imput type but could only get it--> 
+					</b>																						<!--to work with inputs for some reason)-->
+				</div>
+		   
+		  </div>
 	  </div> 
 	  
 	    

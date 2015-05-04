@@ -31,6 +31,7 @@ angular.module('calorieCounter', ['ionic', 'project.controllers'])
     }
   });
   
+  
  
 
   $urlRouterProvider.otherwise('/home');

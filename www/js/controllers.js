@@ -16,24 +16,33 @@ angular.module('project.controllers', [])
 
 
 
+
 .controller('DishesCtrl', function($scope,$rootScope,Projects,$stateParams) {
-  $rootScope.count = parseInt(document.getElementById("totalCals").innerHTML);
  
+   $rootScope.count = 0;
  
  categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes'];
 	
  
-  
+
   $rootScope.addCalories = function(calorie) {													
 	    $rootScope.count = $rootScope.count + calorie;
-		document.getElementById("totalCals").innerHTML = $rootScope.count;
 		Projects.save($rootScope.count);
+			
+		
   };
   
   $rootScope.removeCalories = function(calorie) {													
 	    $rootScope.count = $rootScope.count - calorie;
-		document.getElementById("totalCals").innerHTML = $rootScope.count;
-		Projects.save($rootScope.count);
+		 if($rootScope.count < 0){
+		     $rootScope.count = 0;
+			 Projects.save($rootScope.count);
+		 }else{
+			 Projects.save($rootScope.count);
+		 }
+		 
+		
+		
   };
   
   $scope.reset = function() {														
