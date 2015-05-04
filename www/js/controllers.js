@@ -1,19 +1,46 @@
 angular.module('project.controllers', [])
 
-
-
 .controller('AppCtrl', function($scope) {
   $scope.categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes'];
 })
 
+.factory('Projects', function() {
+	return {
+    
+    save: function(projects) {
+      window.localStorage['projects'] = angular.toJson(projects);
+    },
+    
+	}
+})
 
 
 
-
-
-.controller('DishesCtrl', function($scope, $stateParams) {
-  categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes'];
-
+.controller('DishesCtrl', function($scope,$rootScope,Projects,$stateParams) {
+  $rootScope.count = parseInt(document.getElementById("totalCals").innerHTML);
+ 
+ 
+ categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes'];
+	
+ 
+  
+  $rootScope.addCalories = function(calorie) {													
+	    $rootScope.count = $rootScope.count + calorie;
+		document.getElementById("totalCals").innerHTML = $rootScope.count;
+		Projects.save($rootScope.count);
+  };
+  
+  $rootScope.removeCalories = function(calorie) {													
+	    $rootScope.count = $rootScope.count - calorie;
+		document.getElementById("totalCals").innerHTML = $rootScope.count;
+		Projects.save($rootScope.count);
+  };
+  
+  $scope.reset = function() {														
+	   $rootScope.count = 0;																
+   };
+  
+  
   dishes = [
     [
 	  {title: "Cheese (Full Fat)", imgsrc: "img/cheese.jpg", calories: 115, quantity: 30 + " grams"},

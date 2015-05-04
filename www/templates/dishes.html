@@ -1,11 +1,13 @@
+
 <ion-view view-title="{{ category }}">
-  
-  <div class="bar bar-subheader bar-energized">
-	<h2 class="title", id="totalCals">Total Daily Calories: 0</h2>
+
+  <div class="bar bar-subheader bar-energized" title="Total Daily Calories">
+    <h2> <div id="totalCals"> 0 </div> </h2>
   </div>
   
   <ion-content>
     <ion-list>
+	
 	<br>
 	<br>
 	 <div class="list list-inset" ng-repeat="dish in dishes">
@@ -14,18 +16,24 @@
           <h2>{{ dish.title }}</h2>
 		  <h4> Quantity: {{dish.quantity}} </h4>
 		  <h4> Calories: {{dish.calories}} </h4>
-		  <button ng-click="addCalories({{dish.calories}})"   class="button button-small button-balanced ion-plus" >
+		  <button ng-click="addCalories({{dish.calories}})"   class="button button-small button-balanced ion-plus">
 			Click To Add 	
 		  </button>
 		  <br>
 		  <br>
-		  <button ng-click="addCalories({{dish.calories}})"   class="button button-small button-assertive ion-minus" >
+		  <button ng-click="removeCalories({{dish.calories}})"   class="button button-small button-assertive ion-minus">
 			Click To Remove	
 		  </button>
 		  
 		  
 		</div>
-	  </div>  
+	  </div> 
+	  
+	    
+	
 	</ion-list>
   </ion-content>
+  
+ 
 </ion-view>
+
