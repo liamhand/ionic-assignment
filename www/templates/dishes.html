@@ -8,7 +8,14 @@
 		<div class="item">
 		  
 		  
-		
+		    <div  style="float:right;">																		<!-- this div will stay to the right of the screen-->
+																			<!-- adds an arrow that points down-->
+					<b>Total Calories: </b>
+					<b> <input type="text" ng-model="count" style="float: right;"/> </b>						<!--prints out the total calories, (shouldnt be an imput type but could only get it--> 
+																											<!--to work with inputs for some reason)-->
+				</div>
+			
+			
 		
      	  <img src="{{ dish.imgsrc }}" width="50" height="50">
           <h2>{{ dish.title }}</h2>
@@ -19,17 +26,17 @@
 		  </button>
 		  <br>
 		  <br>
-		  <button ng-click="removeCalories({{dish.calories}})"   class="button button-small button-assertive ion-minus">
+		  <button ng-click="removeCalories({{dish.calories}})"   class="button button-small button-dark ion-minus">
 			Click To Remove	
 		  </button>
+		  <br>
+		  <br>
+		  <button ng-click="reset()"  class="button button-small button-assertive ion-cancel";">
+			Reset Calories	
+		  </button>
 		  
-		  <div  style="float:right;">																		<!-- this div will stay to the right of the screen-->
-					<i class="icon ion-arrow-down-c"></i>														<!-- adds an arrow that points down-->
-					<b>Total Calories:
-					
-						<input type="number" ng-model="count" style="float: right;"/>							<!--prints out the total calories, (shouldnt be an imput type but could only get it--> 
-					</b>																						<!--to work with inputs for some reason)-->
-				</div>
+		  
+		
 		   
 		  </div>
 	  </div> 
