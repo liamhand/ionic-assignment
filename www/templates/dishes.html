@@ -1,21 +1,32 @@
+<!--Has an ionic view at the top of the app, whose name is changed depending on what element of the category array is being accessed-->
 <ion-view view-title="{{ category }}">
     
 	<ion-content>
     
     <ion-list>
 	
+	<!--inserts each dish in a particular as an inset list in my app-->
+	<!--ng-repeat allows us to just list each array element in one line of code, we don't have to hardcode it-->
+	<!--inset lists are suited to apps for replacement of cards when there may be a lot of items to scroll through - they run much more smoothly than normal cards-->
 	<div class="list list-inset" ng-repeat="dish in dishes">
 	  <div class="item">
 		 
+		 <!--total calories are floated to the right for a nicer apperance-->
 		 <div  style="float:right;">																		
 			<b>Total Calories: </b>
+			<!--this allows us to access the $rootScope variable responsible for holding total daily calories-->
+			<!-- ng-model="count" is the attribute used to perform all calorie number operations - used in dishes controller as a method for $rootScope-->
 			<b> <input type="text" ng-model="count" style="float: right;"/> </b>						
 	     </div>
-			
+	  
+	  <!-- {{}} allows us to access and print out every element in the array defined between the brackets -->
+	  <!-- a particular set of info in the array can also be defined for us to access and use eg {{dish.title}} just prints out the title of every dish --> 
 	  <img src="{{ dish.imgsrc }}" width="50" height="50">
          <h2>{{ dish.title }}</h2>
 		 <h4> Quantity: {{dish.quantity}} </h4>
 		 <h4> Calories: {{dish.calories}} </h4>
+		 
+		 <!--3 buttons to add, remove, and reset calories. When clicked, the appropriate function from the dishes controller is called -->
 		 <button ng-click="addCalories({{dish.calories}})" class="button button-small button-balanced ion-plus">
 			Click To Add 	
 		  </button>
