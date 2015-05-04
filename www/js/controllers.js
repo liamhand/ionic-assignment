@@ -1,10 +1,13 @@
 angular.module('project.controllers', [])
 
+//Controller for managing the categories of my foods contained in the side menu
 .controller('AppCtrl', function($scope) {
   $scope.categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes'];
 })
 
 
+//Factory controller for local storage. 
+//Used in my project to save total daily calories denoted by $rootScope in my dishes controller below
 .factory('Projects', function() {
   return {
    
@@ -16,6 +19,11 @@ angular.module('project.controllers', [])
 })
 
 
+//My dishes controller.
+//Has all dishes hardcoded in. There is an array of categories and each category has an array of foods
+//Each food has a title, an image, quantity, and calories contained within that quantity
+//Has a $rootScope which uses the above factory to hold the value of total daily calories
+//Has functions to add, remove, and reset calories
 .controller('DishesCtrl', function($scope,$rootScope,Projects,$stateParams) {
  
  $rootScope.count = 0;
@@ -92,7 +100,8 @@ angular.module('project.controllers', [])
      {title: "Walnuts", imgsrc: "img/walnuts.jpg", calories: 180, quantity: 25 + " grams"},
 	]
   ];
-  
+ 
+ //each food is given an ID in the array, so that the app knows exactly where to find it when needed
  $scope.category = categories[$stateParams.dishesId];
  $scope.dishes = dishes[$stateParams.dishesId];
 
