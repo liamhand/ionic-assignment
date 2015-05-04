@@ -4,53 +4,25 @@ angular.module('project.controllers', [])
   $scope.categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes'];
 })
 
+
 .factory('Projects', function() {
-	return {
-    
+  return {
+   
     save: function(projects) {
       window.localStorage['projects'] = angular.toJson(projects);
-    },
+    }
     
-	}
+  }
 })
-
-
 
 
 .controller('DishesCtrl', function($scope,$rootScope,Projects,$stateParams) {
  
-   $rootScope.count = 0;
+ $rootScope.count = 0;
  
  categories = ['Eggs & Dairy', 'Fruits & Vegetables', 'Grains & Breads', 'Junk & Snack Foods','Meat, Fish & Shellfish', 'Nuts, Beans, & Legumes'];
-	
- 
 
-  $rootScope.addCalories = function(calorie) {													
-	    $rootScope.count = $rootScope.count + calorie;
-		Projects.save($rootScope.count);
-			
-		
-  };
-  
-  $rootScope.removeCalories = function(calorie) {													
-	    $rootScope.count = $rootScope.count - calorie;
-		 if($rootScope.count < 0){
-		     $rootScope.count = 0;
-			 Projects.save($rootScope.count);
-		 }else{
-			 Projects.save($rootScope.count);
-		 }
-		 
-		
-		
-  };
-  
-  $scope.reset = function() {														
-	   $rootScope.count = 0;																
-   };
-  
-  
-  dishes = [
+ dishes = [
     [
 	  {title: "Cheese (Full Fat)", imgsrc: "img/cheese.jpg", calories: 115, quantity: 30 + " grams"},
 	  {title: "Cheese (Low Fat)", imgsrc: "img/cheese.jpg", calories: 90, quantity: 30 + " grams"},
@@ -121,7 +93,29 @@ angular.module('project.controllers', [])
 	]
   ];
   
-  $scope.category = categories[$stateParams.dishesId];
-  $scope.dishes = dishes[$stateParams.dishesId];
+ $scope.category = categories[$stateParams.dishesId];
+ $scope.dishes = dishes[$stateParams.dishesId];
 
-});
+ 
+ $rootScope.addCalories = function(calorie) {													
+	    $rootScope.count = $rootScope.count + calorie;
+		Projects.save($rootScope.count);
+  };
+  
+  
+  $rootScope.removeCalories = function(calorie) {													
+	    $rootScope.count = $rootScope.count - calorie;
+		 if($rootScope.count < 0){
+		     $rootScope.count = 0;
+			 Projects.save($rootScope.count);
+		 }else{
+			 Projects.save($rootScope.count);
+		 }
+  };
+  
+  
+  $scope.reset = function() {														
+	   $rootScope.count = 0;																
+   };
+  
+ });

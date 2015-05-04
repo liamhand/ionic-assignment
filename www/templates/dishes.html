@@ -1,51 +1,41 @@
 <ion-view view-title="{{ category }}">
-    <ion-content>
+    
+	<ion-content>
     
     <ion-list>
 	
-	
-	 <div class="list list-inset" ng-repeat="dish in dishes">
-		<div class="item">
-		  
-		  
-		    <div  style="float:right;">																		<!-- this div will stay to the right of the screen-->
-																			<!-- adds an arrow that points down-->
-					<b>Total Calories: </b>
-					<b> <input type="text" ng-model="count" style="float: right;"/> </b>						<!--prints out the total calories, (shouldnt be an imput type but could only get it--> 
-																											<!--to work with inputs for some reason)-->
-				</div>
+	<div class="list list-inset" ng-repeat="dish in dishes">
+	  <div class="item">
+		 
+		 <div  style="float:right;">																		
+			<b>Total Calories: </b>
+			<b> <input type="text" ng-model="count" style="float: right;"/> </b>						
+	     </div>
 			
-			
-		
-     	  <img src="{{ dish.imgsrc }}" width="50" height="50">
-          <h2>{{ dish.title }}</h2>
-		  <h4> Quantity: {{dish.quantity}} </h4>
-		  <h4> Calories: {{dish.calories}} </h4>
-		  <button ng-click="addCalories({{dish.calories}})"   class="button button-small button-balanced ion-plus">
+	  <img src="{{ dish.imgsrc }}" width="50" height="50">
+         <h2>{{ dish.title }}</h2>
+		 <h4> Quantity: {{dish.quantity}} </h4>
+		 <h4> Calories: {{dish.calories}} </h4>
+		 <button ng-click="addCalories({{dish.calories}})" class="button button-small button-balanced ion-plus">
 			Click To Add 	
 		  </button>
 		  <br>
 		  <br>
-		  <button ng-click="removeCalories({{dish.calories}})"   class="button button-small button-dark ion-minus">
+		  <button ng-click="removeCalories({{dish.calories}})" class="button button-small button-dark ion-minus">
 			Click To Remove	
 		  </button>
 		  <br>
 		  <br>
-		  <button ng-click="reset()"  class="button button-small button-assertive ion-cancel";">
+		  <button ng-click="reset()"  class="button button-small button-assertive ion-cancel";>
 			Reset Calories	
 		  </button>
 		  
-		  
-		
-		   
-		  </div>
-	  </div> 
+	  </div>
+	</div> 
 	  
-	    
-	
 	</ion-list>
-  </ion-content>
+    
+	</ion-content>
   
- 
 </ion-view>
 

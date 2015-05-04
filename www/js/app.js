@@ -19,8 +19,6 @@ angular.module('calorieCounter', ['ionic', 'project.controllers'])
   })
   
 
-  
-
   .state('app.dishes', {
     url: "/dishes/:dishesId",
     views: {
@@ -32,7 +30,6 @@ angular.module('calorieCounter', ['ionic', 'project.controllers'])
   });
   
   
- 
-
   $urlRouterProvider.otherwise('/home');
+
 });
