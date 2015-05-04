@@ -20,7 +20,3 @@ This is a small problem that I wish I could have solved, but unfortunately time 
 
 All my source code and commit history is available on GitHub at https://github.com/liamhand/ionic-assignment.
 
-
-
-## How to get this template
-You can clone it using 'git clone <url>' where <url> is the ssh url on the right, or you can click "Download ZIP" on the right and start from there.
